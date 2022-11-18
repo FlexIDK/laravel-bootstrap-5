@@ -1,0 +1,38 @@
+# npm & composer
+node_modules/
+vendor/
+vendor-local/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.idea/
+.vscode/
+.guthub/
+
+/public/hot
+/public/storage
+/storage/*.key
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+/a
+/storage/logs/*.log
+backup/public/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# OS X
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
