@@ -1,13 +1,17 @@
 {
-  "name": "One23/LaravelBootstrap5",
+  "name": "one23/laravel-bootstrap-5",
+  "type": "library",
   "homepage": "https://github.com/FlexIDK/laravel-bootstrap-5",
   "description": "Laravel Bootstrap 5 Blade components",
   "license": "MIT",
+  "version": "0.0.1",
   "authors": [
   ],
   "require": {
-    "php": "8.1",
-    "laravel/framework": "9.*"
+    "php" : "~8",
+    "illuminate/support": "~v9",
+    "illuminate/view": "~v9",
+    "illuminate/contracts": "~v9"
   },
   "suggest": {
     "twbs/bootstrap": "5.*",
