@@ -1,26 +1,30 @@
-@php
-$attributes = $attributes
-    ->class([
-        'alert',
-        'alert-' . $color => $color,
-        'alert-dismissible fade show' => $dismissible,
-    ])
-    ->merge([
-        'role' => 'alert',
-    ])
-;
-@endphp
+@props([
+    'color' => 'success',
+    'dismiss' => false,
+    'class' => "",
+])
+<div
+  class="
+    alert
+    alert-{{ $color }}
+    @if($dismiss) alert-dismissible fade show @endif
+    {{ $class }}
+  "
+  role="alert"
+>
+  <div>
+    {{ $slot }}
+  </div>
 
-<div {{ $attributes }}>
-  @if($label && $slot)
-
-  @else
-  {{ $label ?? $slot }}
-  @endif
-
-  @if($dismissible)
+  @if($dismiss)
+{{--
     <x-bs5::close
       dismiss="alert"
     />
+--}}
+  <button type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="{{ __('Close') }}" />
   @endif
 </div>

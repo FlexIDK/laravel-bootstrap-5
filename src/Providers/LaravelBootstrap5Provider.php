@@ -2,40 +2,32 @@
 
 namespace One23\LaravelBootstrap5\Providers;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use One23\LaravelBootstrap5\Components;
 
 class LaravelBootstrap5Provider extends ServiceProvider
 {
-    public function boot()
+
+
+    public function boot(): void
     {
-        Blade::componentNamespace('One23\\LaravelBootstrap5\\Components', 'bs5');
+        $components = [];
+        foreach (scandir(__DIR__ . '/../Components') as $file) {
+            if (!str_ends_with($file, '.php')) {
+                continue;
+            }
 
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'bs5');
+            $key = 'bootstrap::' . \Str::kebab(substr($file, 0, -4));
+            $value = 'One23\\LaravelBootstrap5\\Components\\' . substr($file, 0, -4);
 
-        $this->publishes(
-            [__DIR__ . '/../../config/laravel-bootstrap-5.php' => config_path('laravel-bootstrap-5.php')],
-            ['laravel-bootstrap-5', 'laravel-bootstrap-5:config']
+            $components[$key] = $value;
+        }
+
+        $this->loadViewComponentsAs('', $components);
+
+        $this->loadViewsFrom(
+             __DIR__ . '/../../resources/views',
+            'bootstrap'
         );
-
-//        $this->publishes(
-//            [__DIR__ . '/../../resources/views' => resource_path('views/vendor/bs5')],
-//            ['laravel-bootstrap-5', 'laravel-bootstrap-5:views']
-//        );
-
-        $this->registerResources();
     }
-
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/laravel-bootstrap-5.php', 'laravel-bootstrap-5');
-
-    }
-
-    public function registerResources() {
-        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'bs5');
-    }
-
 
 }

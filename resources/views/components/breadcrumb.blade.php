@@ -1,52 +1,37 @@
-@php
-use \Illuminate\Support;
-
-$replace = [
-    '\\' => '\\\\',
-    '\'' => '\\\'',
-];
-
-$attributes = $attributes
-    ->class([
-        //
-    ])
-    ->merge([
-        'aria-label' => 'breadcrumb',
-
-        ...(is_null($divider) ? [] : [
-            'style' => "--bs-breadcrumb-divider: '" .
-                str_replace(
-                    array_keys($replace),
-                    array_values($replace),
-                    Support\Str::limit($divider, 1, '')
-                ) .
-                "';"
-        ]),
-    ])
-;
-
-@endphp
-
-<nav
-  {{ $attributes }}
->
+@props([
+    'color' => 'success',
+    'dismiss' => false,
+    'items' => [],
+    'activeLatest' => false,
+])
+@if (count($items))
+<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    @foreach($items as $item)
-    <li
-      @if ($item['active'])
-        class="breadcrumb-item active"
-        aria-current="page"
-      @else
-        class="breadcrumb-item"
-      @endif
-    >
-      @if ($item['href'] && !$item['active'])
-      <a href="{{ $item['href'] }}">
-        {{ $item['name'] }}</a>
-      @else
-        {{ $item['name'] }}
-      @endif
-    </li>
-    @endforeach
+  @foreach($items as $item)
+    @if(is_string($item))
+        <li class="breadcrumb-item @if($loop->last && $activeLatest) active @endif "
+            aria-current="page">
+        {{ $item  }}
+    @elseif (
+        !\Arr::get($item, 'url') ||
+        \Arr::get($item, 'active') ||
+        ($loop->last && $activeLatest)
+    )
+    <li class="breadcrumb-item @if(\Arr::get($item, 'active')) active @endif "
+        aria-current="page">
+      {{ $item['value']  }}
+    @else
+        <li class="breadcrumb-item"
+            aria-current="page">
+          <a
+            href="{{ \Arr::get($item, 'url') }}"
+            @if(\Arr::get($item, 'target')) target="_blank" @endif
+          >
+            {{ $item['value']  }}</a>
+    @endif
+
+      </li>
+  @endforeach
   </ol>
 </nav>
+@endif

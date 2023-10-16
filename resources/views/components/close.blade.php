@@ -1,6 +1,7 @@
 @props([
     'color' => null,
     'dismiss' => null,
+    'disabled' => false,
 ])
 
 @php
@@ -11,6 +12,7 @@
       'type' => 'button',
       'data-bs-dismiss' => $dismiss,
       'aria-label' => __('bs5::components.Close'),
+      'disabled' => $disabled,
   ]);
 @endphp
 

@@ -9,14 +9,16 @@
   ],
   "require": {
     "php" : "~8",
-    "illuminate/support": "~v9",
-    "illuminate/view": "~v9",
-    "illuminate/contracts": "~v9"
+    "illuminate/contracts": "~v10",
+    "illuminate/view": "~v10",
+    "illuminate/support": "~v10"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "~v6"
   },
   "suggest": {
-    "twbs/bootstrap": "5.*",
-    "components/jquery": "3.*",
-    "fortawesome/font-awesome": "6.*"
+    "laravel/framework": "~v10",
+    "twbs/bootstrap": "~v5.3"
   },
   "autoload": {
     "psr-4": {
