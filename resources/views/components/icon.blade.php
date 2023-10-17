@@ -7,8 +7,8 @@
 $attributes = $attributes
     ->class([
         'fa',
-        'fa-' . $name => $name,
-        'text-' . $color => $color,
+        ($name ? 'fa-' . $name : null),
+        ($color ? 'text-' . $color : null),
     ])
     ->merge([
         //

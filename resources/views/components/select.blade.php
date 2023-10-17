@@ -20,7 +20,7 @@
 
 
 <select
-  name="{{ $name }}"
+  @if($name && !$disabled) name="{{ $name }}" @endif
   class="
     form-select
     @if($size) form-size-{{ $size }} @endif
@@ -34,7 +34,7 @@
   <x-bootstrap::select-options
     :default="$default"
     :options="$options"
-    :value="$currentValue"
+    :value="$currentValue()"
   />
 </select>
 

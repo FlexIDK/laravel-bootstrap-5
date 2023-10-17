@@ -1,24 +1,20 @@
 @props([
-    'bg' => 'primary',
-    'textBg' => null,
-    'rounded' => false,
-    'label' => null,
-    'dot'   => false,
-    'icon'  => null,
+  'color' => null,
+  'rounded' => false,
+  'dot'   => false,
 ])
 
 @php
 $attributes = $attributes
     ->class([
         'badge',
-        'bg-' . $bg => $bg && !$textBg,
-        'text-bg-' . $textBg => $textBg,
-        'rounded-pill' => $rounded && !$dot,
+        $colorBadge,
+        $rounded && !$dot ? 'rounded-pill' : null,
 
         ...($dot ? [
             'border',
             'rounded-circle',
-            'p-2',
+            'p-1',
         ] : [])
     ])
     ->merge([
@@ -38,13 +34,11 @@ if (
 @if ($isVisible)
 <span {{ $attributes }}>
   @if(!$dot)
-    <x-bs5::icon :name="$icon"/>
-
     {{ $slot }}
-  @endif
-
-  @if($label)
-  <span class="visually-hidden">{{ $label }}</span>
+  @else
+    <span class="visually-hidden">
+      {{ $slot }}
+    </span>
   @endif
 </span>
 @endif

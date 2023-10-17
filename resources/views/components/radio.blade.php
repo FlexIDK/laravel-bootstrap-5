@@ -12,7 +12,8 @@
   <input
     class="form-check-input"
     type="radio"
-    name="{{ $name }}"
+    @if($name && $disabled) name="__disabled__{{ $name }}"
+    @elseif($name) name="{{ $name }}" @endif
     value="{{ $value }}"
     id="label-{{ $name }}-{{ $value }}"
     @if($required) required @endif

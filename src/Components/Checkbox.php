@@ -22,7 +22,6 @@ class Checkbox extends Component
         return view(
             'bootstrap::components.checkbox',
             [
-                'currentChecked' => $this->currentChecked(),
             ]
         );
     }

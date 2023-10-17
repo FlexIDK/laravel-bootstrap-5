@@ -22,7 +22,6 @@ class Input extends Component
         return view(
             'bootstrap::components.input',
             [
-                'currentValue' => $this->currentValue(),
             ]
         );
     }

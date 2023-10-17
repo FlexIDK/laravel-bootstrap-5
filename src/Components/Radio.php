@@ -23,7 +23,6 @@ class Radio extends Component
         return view(
             'bootstrap::components.radio',
             [
-                'currentChecked' => $this->currentChecked(),
             ]
         );
     }

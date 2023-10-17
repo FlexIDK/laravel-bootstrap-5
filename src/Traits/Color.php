@@ -49,6 +49,8 @@ trait Color {
         }
     }
 
+    //
+
     protected function colorButton(): string {
         if ($this->color === 'link') {
             return 'btn-' . $this->color;
@@ -57,6 +59,18 @@ trait Color {
         return $this?->outline
             ? 'btn-outline-' . $this->color
             : 'btn-' . $this->color;
+    }
+
+    protected function colorAlert(): string {
+        return 'alert-' . $this->color;
+    }
+
+    protected function colorText(): string {
+        return 'text-' . $this->color;
+    }
+
+    public function colorBadge(): string {
+        return 'text-bg-' . $this->color;
     }
 
 }

@@ -15,12 +15,12 @@
     @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
     class="form-check-input"
     type="checkbox"
-    @if($name) name="{{ $name }}" @endif
+    @if($name && !$disabled) name="{{ $name }}" @endif
     value="{{ $value }}"
     @if($required) required @endif
     @if($disabled) disabled @endif
     @if($readonly) readonly @endif
-    {{ $currentChecked ? 'checked' : '' }}
+    {{ $currentChecked() ? 'checked' : '' }}
   />
 
   @if ($label)

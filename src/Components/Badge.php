@@ -2,27 +2,29 @@
 
 namespace One23\LaravelBootstrap5\Components;
 
-use App\Traits\Bootstrap;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use One23\LaravelBootstrap5\Traits;
 
-class Textarea extends Component
+class Badge extends Component
 {
-    use Traits\Value;
+    use Traits\Color;
 
     public function __construct(
-        public ?string $name = null,
-        public mixed $value = null,
+        string $color = null,
     ) {
+        $this->colorDefaultInit($color);
+        // todo type
+        // todo size
     }
 
     public function render(): View|Closure|string
     {
         return view(
-            'bootstrap::components.textarea',
+            'bootstrap::components.badge',
             [
+                'colorBadge' => $this->colorBadge(),
             ]
         );
     }

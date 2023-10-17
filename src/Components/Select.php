@@ -22,7 +22,6 @@ class Select extends Component
         return view(
             'bootstrap::components.select',
             [
-                'currentValue' => $this->currentValue(),
             ]
         );
     }

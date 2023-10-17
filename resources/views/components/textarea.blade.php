@@ -25,13 +25,13 @@
     @if($name) @error($name) is-invalid @enderror @endif
     @if($size) form-control-{{ $size }} @endif
   "
-  @if($name) name="{{ $name }}" @endif
+  @if($name && !$disabled) name="{{ $name }}" @endif
   @if($placeholder) placeholder="{{ $placeholder }}" @endif
   @if($required) required @endif
   @if($autofocus) autofocus @endif
   @if($readonly) readonly @endif
   @if($disabled) disabled @endif
->{{ $currentValue }}</textarea>
+>{{ $currentValue() }}</textarea>
 
 @if($feedback && $name)
   @error($name)

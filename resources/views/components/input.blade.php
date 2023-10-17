@@ -35,8 +35,8 @@ if($plaintext) {
     @if($name) @error($name) is-invalid @enderror @endif
     @if($size) form-control-{{ $size }} @endif
   "
-  @if($name) name="{{ $name }}" @endif
-  value="{{ $currentValue }}"
+  @if($name && !$disabled) name="{{ $name }}" @endif
+  value="{{ $currentValue() }}"
   @if($placeholder) placeholder="{{ $placeholder }}" @endif
   @if($autocomplete === true) autocomplete @endif
   @if(is_string($autocomplete)) autocomplete="{{ $autocomplete }}" @endif
