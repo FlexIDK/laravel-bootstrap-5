@@ -41,7 +41,7 @@ $attributes = $attributes
 @if(! $typeButton())
   <a
     {{ $attributes }}
-  >{!! $slot !!}</a>
+  >@if ($value){{ $value }}@else{!! $slot !!}@endif</a>
 @elseif(!$value)
   <button
     {{ $attributes }}
