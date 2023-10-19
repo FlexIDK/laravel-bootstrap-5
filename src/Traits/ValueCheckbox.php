@@ -6,9 +6,10 @@ namespace One23\LaravelBootstrap5\Traits;
  * @property string|null $name
  * @property bool $checked
  */
-trait ValueCheckbox {
-
-    public function currentChecked(): bool {
+trait ValueCheckbox
+{
+    public function currentChecked(): bool
+    {
         if (is_null($this->name)) {
             return $this->checked;
         }
@@ -17,7 +18,6 @@ trait ValueCheckbox {
             return $this->checked;
         }
 
-        return !! old($this->name);
+        return (bool) old($this->name);
     }
-
 }

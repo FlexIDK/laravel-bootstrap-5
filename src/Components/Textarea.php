@@ -2,7 +2,6 @@
 
 namespace One23\LaravelBootstrap5\Components;
 
-use App\Traits\Bootstrap;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

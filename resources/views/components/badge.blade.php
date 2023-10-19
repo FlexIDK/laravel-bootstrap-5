@@ -2,19 +2,20 @@
   'color' => null,
   'rounded' => false,
   'dot'   => false,
+  'dotSize' => 1,
 ])
 
 @php
 $attributes = $attributes
     ->class([
         'badge',
-        $colorBadge,
+        $colorBadge(),
         $rounded && !$dot ? 'rounded-pill' : null,
 
         ...($dot ? [
             'border',
             'rounded-circle',
-            'p-1',
+            'p-' . ($dotSize ?: 1),
         ] : [])
     ])
     ->merge([

@@ -24,7 +24,6 @@ class Alert extends Component
         return view(
             'bootstrap::components.alert',
             [
-                'colorAlert' => $this->colorAlert(),
             ]
         );
     }

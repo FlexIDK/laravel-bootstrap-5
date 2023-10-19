@@ -7,9 +7,10 @@ namespace One23\LaravelBootstrap5\Traits;
  * @property bool $checked
  * @property mixed $value
  */
-trait ValueRadio {
-
-    public function currentChecked(): bool {
+trait ValueRadio
+{
+    public function currentChecked(): bool
+    {
         if (is_null($this->name)) {
             return $this->checked;
         }
@@ -20,5 +21,4 @@ trait ValueRadio {
 
         return old($this->name) === $this->value;
     }
-
 }

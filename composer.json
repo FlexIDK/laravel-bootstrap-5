@@ -8,7 +8,7 @@
   "authors": [
   ],
   "require": {
-    "php" : "~8",
+    "php" : "~8.1",
     "illuminate/contracts": "~v10",
     "illuminate/view": "~v10",
     "illuminate/support": "~v10"

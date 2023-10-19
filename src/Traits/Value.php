@@ -6,9 +6,10 @@ namespace One23\LaravelBootstrap5\Traits;
  * @property string|null $name
  * @property mixed $value
  */
-trait Value {
-
-    public function currentValue(): mixed {
+trait Value
+{
+    public function currentValue(): mixed
+    {
         if (is_null($this->name)) {
             return $this->value;
         }
@@ -19,5 +20,4 @@ trait Value {
 
         return old($this->name);
     }
-
 }

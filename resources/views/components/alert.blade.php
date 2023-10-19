@@ -7,7 +7,7 @@
   $attributes = $attributes
     ->class([
         'alert',
-        $colorAlert,
+        $colorAlert(),
         ($dismissible ? 'alert-dismissible fade show' : null),
     ])
     ->merge([

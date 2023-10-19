@@ -1,54 +1,44 @@
 @props([
-  'href' => null,
-  'type' => 'submit',
   'value' => null,
   'disabled' => false,
   'class' => "",
-  'size' => null,
   'dropdown' => false,
   'toggle' => false,
   'active' => false,
+  'nowrap' => false,
 ])
 @php
-if (
-  is_null($href) &&
-  $type === 'link'
-) {
-    $href = 'javascript:;';
-}
-elseif (!is_null($href)) {
-    $type = 'link';
-}
-
 $attributes = $attributes
   ->class([
       'btn',
-      $colorButton,
-      $size ? 'btn-' . $size : null,
+      $colorButton(),
+      $sizeButton(),
       $dropdown ? 'dropdown-toggle' : null,
       $disabled ? 'disabled' : null,
       $class,
-      ($toggle && $active && $type === 'link'
+      ($toggle && $active
         ? 'active'
         : null),
+      ($nowrap ? 'text-nowrap' : null),
   ])
   ->merge([
-      ...($toggle && $type !== 'link' ? [
+      ...($toggle ? [
         'data-bs-toggle' => 'button',
       ] : []),
-      ...($type === 'link' ? [
+      ...(! $typeButton() ? [
         'href' => $href,
+        'role' => 'button',
       ] : [
-        'type' => $type
+        'type' => $typeButton()
       ]),
       ...($disabled
-        ? ($type !== 'link' ? ['tabindex' => '-1'] : ['disabled' => true])
+        ? (! $typeButton() ? ['tabindex' => '-1'] : ['disabled' => true])
         : []),
       ...($dropdown ? ['data-bs-toggle' => 'dropdown'] : []),
   ]);
 @endphp
 
-@if($type === 'link')
+@if(! $typeButton())
   <a
     {{ $attributes }}
   >{!! $slot !!}</a>

@@ -24,7 +24,6 @@ class Badge extends Component
         return view(
             'bootstrap::components.badge',
             [
-                'colorBadge' => $this->colorBadge(),
             ]
         );
     }
