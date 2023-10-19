@@ -15,8 +15,6 @@ class Alert extends Component
         string $color = null,
     ) {
         $this->colorDefaultInit($color);
-        // todo type
-        // todo size
     }
 
     public function render(): View|Closure|string
