@@ -1,19 +1,16 @@
 @props([
-    'name' => null,
-    'color' => null,
+    'name',
 ])
 
 @php
 $attributes = $attributes
     ->class([
-        'fa',
-        ($name ? 'fa-' . $name : null),
-        ($color ? 'text-' . $color : null),
+        $categoryIcon(),
+        ('fa-' . $name),
+        $colorText(),
     ])
     ->merge([
-        //
-    ])
-;
+    ]);
 @endphp
 
 @if($name)

@@ -14,15 +14,15 @@ class Button extends Component
     use Traits\TypeButton;
 
     public function __construct(
-        string $color = null,
+        string $color = 'primary',
         public bool $outline = false,
         string $type = null,
         public ?string $href = null,
         string $size = null,
     ) {
-        $this->colorButtonInit($color);
-        $this->typeButtonDefaultInit($type);
-        $this->sizeButtonDefaultInit($size);
+        $this->initColorButton($color);
+        $this->initTypeButtonDefault($type);
+        $this->initSizeButtonDefault($size);
     }
 
     public function render(): View|Closure|string

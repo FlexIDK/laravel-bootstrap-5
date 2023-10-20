@@ -14,9 +14,7 @@ class Badge extends Component
     public function __construct(
         string $color = null,
     ) {
-        $this->colorDefaultInit($color);
-        // todo type
-        // todo size
+        $this->initColorDefault($color);
     }
 
     public function render(): View|Closure|string

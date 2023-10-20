@@ -2,7 +2,6 @@
   'value' => null,
   'color' => 'primary',
   'disabled' => false,
-  'class' => "",
   'outline' => false,
   'size' => null,
   'dropdownPosition' => null,
@@ -26,7 +25,6 @@ $classPosition = match ($dropdownPosition) {
     :color="$color"
     :value="$value"
     :disabled="$disabled"
-    :class="$class"
     :outline="$outline"
     :size="$size"
   >{{ $slot }}</x-bootstrap::button>

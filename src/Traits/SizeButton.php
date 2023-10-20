@@ -11,7 +11,7 @@ trait SizeButton
         'sm',
     ];
 
-    protected function sizeButtonDefaultInit(
+    protected function initSizeButtonDefault(
         string $typeButton = null,
     ): void {
         $this->sizeButton = $typeButton;

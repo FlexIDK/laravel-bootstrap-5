@@ -27,7 +27,7 @@ $attributes = $attributes
 @foreach($items() as $item)
   @if($tagParent === 'ul') <li> @endif
 
-  @if ($item['type'] === 'header')
+  @if ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_HEADER)
     <div class="
       dropdown-header
       @if ($item['class'] ?? null) {{ $item['class'] }} @endif
@@ -35,7 +35,7 @@ $attributes = $attributes
       @if($item['html']) {!! $item['html'] !!} @else {{ $item['text'] }} @endif
     </div>
 
-  @elseif ($item['type'] === 'footer')
+  @elseif ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_FOOTER)
     <div class="
       dropdown-footer
       @if ($item['class'] ?? null) {{ $item['class'] }} @endif
@@ -43,13 +43,13 @@ $attributes = $attributes
       @if($item['html']) {!! $item['html'] !!} @else {{ $item['text'] }} @endif
     </div>
 
-  @elseif ($item['type'] === 'divider')
+  @elseif ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_DIVIDER)
     <hr class="
       dropdown-divider
       @if ($item['class'] ?? null) {{ $item['class'] }} @endif
     " />
 
-  @elseif ($item['type'] === 'text')
+  @elseif ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_TEXT)
     <span class="
       dropdown-item-text
       @if ($item['class'] ?? null) {{ $item['class'] }} @endif
@@ -57,7 +57,7 @@ $attributes = $attributes
       @if($item['html']) {!! $item['html'] !!} @else {{ $item['text'] }} @endif
     </span>
 
-  @elseif ($item['type'] === 'link')
+  @elseif ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_LINK)
     <a
       href="{{ $item['href'] }}"
       @if ($item['target'] ?? null)

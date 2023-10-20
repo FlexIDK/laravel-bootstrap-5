@@ -1,7 +1,6 @@
 @props([
   'value' => null,
   'disabled' => false,
-  'class' => "",
   'dropdown' => false,
   'toggle' => false,
   'active' => false,
@@ -15,7 +14,6 @@ $attributes = $attributes
       $sizeButton(),
       $dropdown ? 'dropdown-toggle' : null,
       $disabled ? 'disabled' : null,
-      $class,
       ($toggle && $active
         ? 'active'
         : null),
