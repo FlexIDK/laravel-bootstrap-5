@@ -13,7 +13,10 @@
 <div class="form-check @if($inline) form-check-inline @endif ">
   <input
     @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
-    class="form-check-input"
+    class="
+      form-check-input
+      @if($name) @error($name) is-invalid @enderror @endif
+    "
     type="checkbox"
     @if($name && !$disabled) name="{{ $name }}" @endif
     value="{{ $value }}"

@@ -13,13 +13,13 @@
   @if($label)
     <label
       @if($name) for="label-{{ $name }}" @endif
-      class="col-form-label col-{{ $labelCol }}">
+      class="col-form-label col-12 col-sm-{{ $labelCol }}">
       {{ $label }}
     </label>
   @endif
 
   <div class="
-    @if ($labelCol >= 12) col-12 @else col-{{ 12 - $labelCol }} @endif
+    @if ($labelCol >= 12) col-12 @else col-sm-{{ 12 - $labelCol }} @endif
     @if(!$label && $labelCol < 12) offset-{{ $labelCol }} @endif
   ">
     {!! $slot !!}
