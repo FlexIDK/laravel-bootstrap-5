@@ -1,5 +1,5 @@
 @props([
-    'name',
+    'name' => null,
     'label' => null,
     'multiple' => false,
     'size' => null,
@@ -12,8 +12,9 @@
     'feedback' => true,
 ])
 @if($label)
-  <label for="label-{{ $name }}"
-         class="form-label">
+  <label
+    @if ($name) for="label-{{ $name }}" @endif
+    class="form-label">
     {{ $label }}
   </label>
 @endif
@@ -24,7 +25,7 @@
   class="
     form-select
     @if($size) form-size-{{ $size }} @endif
-    @error($name) is-invalid @enderror
+    @if($name) @error($name) is-invalid @enderror @endif
   "
   @if($readonly) readonly @endif
   @if($disabled) disabled @endif
@@ -38,7 +39,7 @@
   />
 </select>
 
-@if($feedback)
+@if($feedback && $name)
   @error($name)
   <x-bootstrap::invalid-feedback
     :message="$message" />

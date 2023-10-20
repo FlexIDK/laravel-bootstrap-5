@@ -29,8 +29,10 @@
   </label>
   @endif
 
-  @error($name)
-  <x-bootstrap::invalid-feedback
-    :message="$message" />
-  @enderror
+  @if($name)
+    @error($name)
+    <x-bootstrap::invalid-feedback
+      :message="$message" />
+    @enderror
+  @endif
 </div>

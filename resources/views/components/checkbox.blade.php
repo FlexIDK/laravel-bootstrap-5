@@ -9,6 +9,7 @@
     'inline' => false,
     'labelDisabled' => false,
     'feedback' => true,
+    'checked' => false,
 ])
 <div class="form-check @if($inline) form-check-inline @endif ">
   <input

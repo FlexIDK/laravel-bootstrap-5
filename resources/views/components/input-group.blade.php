@@ -1,5 +1,5 @@
 @props([
-    'name',
+    'name' => null,
     'label',
     'value' => null,
     'type' => 'text',
@@ -13,14 +13,15 @@
     'readonly' => false,
     'disabled' => false,
 ])
-<label for="label-{{ $name }}"
-       class="form-label">
+<label
+  @if($name) for="label-{{ $name }}" @endif
+  class="form-label">
   {{ $label }}
 </label>
 <div class="
   input-group
   @if($size) input-group-{{ $size }} @endif
-  @error($name) has-validation @enderror
+  @if($name) @error($name) has-validation @enderror @endif
 ">
   @if ($iconBefore)
     <x-bootstrap::input-group-text
@@ -44,7 +45,7 @@
       :content='"<i class=\"{$iconAfter}\"></i>"' />
   @endif
 
-  @if($feedback)
+  @if($feedback && $name)
     @error($name)
     <x-bootstrap::invalid-feedback
       :message="$message" />
