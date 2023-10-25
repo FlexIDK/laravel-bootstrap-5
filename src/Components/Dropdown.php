@@ -46,7 +46,7 @@ class Dropdown extends Component
                     'active' => str_contains($match[1], '*'),
                     'disable' => str_contains($match[1], '-'),
                     'text' => $match[2],
-                    'href' => $match[3],
+                    'url' => $match[3],
                 ];
             }
 
@@ -61,7 +61,7 @@ class Dropdown extends Component
                 'text' => $val,
             ];
         } elseif (is_array($val)) {
-            if (! is_null($val['href'] ?? null)) {
+            if (! is_null($val['url'] ?? null)) {
                 $val['type'] = static::TYPE_LINK;
             }
 
