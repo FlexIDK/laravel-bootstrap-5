@@ -18,6 +18,6 @@ trait ValueCheckbox
             return $this->checked;
         }
 
-        return (bool) old($this->name);
+        return (bool)old($this->name);
     }
 }

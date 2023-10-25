@@ -21,8 +21,7 @@ class Dropdown extends Component
 
     public function __construct(
         public ?array $items = []
-    ) {
-    }
+    ) {}
 
     protected function item($val)
     {
@@ -87,7 +86,7 @@ class Dropdown extends Component
     {
         $res = [];
 
-        array_walk($this->items, function ($item) use (
+        array_walk($this->items, function($item) use (
             &$res
         ) {
             $res[] = $this->item($item);

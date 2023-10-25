@@ -14,8 +14,7 @@ class Input extends Component
     public function __construct(
         public ?string $name = null,
         public mixed $value = null,
-    ) {
-    }
+    ) {}
 
     public function render(): View|Closure|string
     {

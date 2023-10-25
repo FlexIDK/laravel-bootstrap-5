@@ -9,13 +9,13 @@ class LaravelBootstrap5Provider extends ServiceProvider
     public function boot(): void
     {
         $components = [];
-        foreach (scandir(__DIR__.'/../Components') as $file) {
+        foreach (scandir(__DIR__ . '/../Components') as $file) {
             if (! str_ends_with($file, '.php')) {
                 continue;
             }
 
-            $key = 'bootstrap::'.\Str::kebab(substr($file, 0, -4));
-            $value = 'One23\\LaravelBootstrap5\\Components\\'.substr($file, 0, -4);
+            $key = 'bootstrap::' . \Str::kebab(substr($file, 0, -4));
+            $value = 'One23\\LaravelBootstrap5\\Components\\' . substr($file, 0, -4);
 
             $components[$key] = $value;
         }
@@ -23,7 +23,7 @@ class LaravelBootstrap5Provider extends ServiceProvider
         $this->loadViewComponentsAs('', $components);
 
         $this->loadViewsFrom(
-            __DIR__.'/../../resources/views',
+            __DIR__ . '/../../resources/views',
             'bootstrap'
         );
     }

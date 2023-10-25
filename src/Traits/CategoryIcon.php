@@ -29,6 +29,6 @@ trait CategoryIcon
 
     public function categoryIcon(): string
     {
-        return 'fa'.($this->categoryIcon ? '-'.$this->categoryIcon : '');
+        return 'fa' . ($this->categoryIcon ? '-' . $this->categoryIcon : '');
     }
 }

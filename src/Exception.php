@@ -2,6 +2,4 @@
 
 namespace One23\LaravelBootstrap5;
 
-class Exception extends \Exception
-{
-}
+class Exception extends \Exception {}

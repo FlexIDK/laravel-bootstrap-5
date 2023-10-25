@@ -59,7 +59,7 @@ $attributes = $attributes
 
   @elseif ($item['type'] === \One23\LaravelBootstrap5\Components\Dropdown::TYPE_LINK)
     <a
-      href="{{ $item['href'] }}"
+      href="{{ $item['url'] }}"
       @if ($item['target'] ?? null)
         @if($item['target'])
           target="{{ $item['target'] }}"

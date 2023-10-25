@@ -15,8 +15,7 @@ class Radio extends Component
         public mixed $value,
         public ?string $name = null,
         public bool $checked = false,
-    ) {
-    }
+    ) {}
 
     public function render(): View|Closure|string
     {

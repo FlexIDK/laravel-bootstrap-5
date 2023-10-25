@@ -7,19 +7,22 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 use One23\LaravelBootstrap5\Traits;
 
-class Checkbox extends Component
+class Nav extends Component
 {
-    use Traits\ValueCheckbox;
+    use Traits\Random;
 
     public function __construct(
-        public ?string $name = null,
-        public bool $checked = false,
-    ) {}
+        public ?string $id = null,
+        public ?string $parentId = null,
+        public bool $show = false,
+    ) {
+        $this->id = $id ?: $this->idCreate('nav');
+    }
 
     public function render(): View|Closure|string
     {
         return view(
-            'bootstrap::components.checkbox',
+            'bootstrap::components.nav',
             [
             ]
         );

@@ -10,6 +10,6 @@ trait Random
 {
     public function idCreate(string $key)
     {
-        return "bootstrap-{$key}-".mt_rand(100000, 999999);
+        return "bootstrap-{$key}-" . mt_rand(100000, 999999);
     }
 }

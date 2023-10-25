@@ -54,37 +54,37 @@ trait Color
 
     public function colorButton(): string
     {
-        if (!$this->color) {
+        if (! $this->color) {
             return '';
         }
 
         if ($this->color === 'link') {
-            return 'btn-'.$this->color;
+            return 'btn-' . $this->color;
         }
 
         return $this->outline
-            ? 'btn-outline-'.$this->color
-            : 'btn-'.$this->color;
+            ? 'btn-outline-' . $this->color
+            : 'btn-' . $this->color;
     }
 
     public function colorAlert(): string
     {
         return $this->color
-            ? 'alert-'.$this->color
+            ? 'alert-' . $this->color
             : '';
     }
 
     public function colorText(): string
     {
         return $this->color
-            ? 'text-'.$this->color
+            ? 'text-' . $this->color
             : '';
     }
 
     public function colorBadge(): string
     {
         return $this->color
-            ? 'text-bg-'.$this->color
+            ? 'text-bg-' . $this->color
             : '';
     }
 }
