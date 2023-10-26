@@ -1,34 +1,46 @@
 @props([
     'name' => null,
-    'label',
+    'label' => null,
     'value' => null,
     'type' => 'text',
     'required' => false,
-    'iconBefore' => null,
-    'iconAfter' => null,
     'size' => null,
     'autocomplete' => null,
     'autofocus' => false,
     'feedback' => true,
     'readonly' => false,
     'disabled' => false,
+    'id' => null,
+    'placeholder' => null,
+    'plaintext' => false,
+    'after' => null,
 ])
+@php
+use \Illuminate\View\ComponentSlot;
+@endphp
+
+@if($label)
 <label
   @if($name) for="label-{{ $name }}" @endif
   class="form-label">
   {{ $label }}
 </label>
+@endif
+
 <div class="
   input-group
   @if($size) input-group-{{ $size }} @endif
   @if($name) @error($name) has-validation @enderror @endif
 ">
-  @if ($iconBefore)
-    <x-bootstrap::input-group-text
-      :content='"<i class=\"{$iconBefore}\"></i>"' />
+
+  @if($slot instanceof ComponentSlot && !$slot->isEmpty())
+    {{ $slot }}
   @endif
 
   <x-bootstrap::input
+    :id="$id"
+    :placeholder="$placeholder"
+    :plaintext="$plaintext"
     :type="$type"
     :name="$name"
     :value="$value"
@@ -40,9 +52,8 @@
     :feedback="false"
   />
 
-  @if ($iconAfter)
-    <x-bootstrap::input-group-text
-      :content='"<i class=\"{$iconAfter}\"></i>"' />
+  @if($after instanceof ComponentSlot && !$after->isEmpty())
+    {{ $after }}
   @endif
 
   @if($feedback && $name)
