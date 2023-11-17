@@ -28,6 +28,10 @@ trait SizeButton
 
     public function sizeButton(): ?string
     {
-        return 'btn-' . $this->sizeButton;
+        if ($this->sizeButton) {
+            return 'btn-' . $this->sizeButton;
+        }
+
+        return null;
     }
 }
