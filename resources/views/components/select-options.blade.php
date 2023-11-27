@@ -24,6 +24,7 @@
         value="{{ $option['value'] }}"
         @if(
           (is_array($value) && in_array($option['value'], $value)) ||
+          (is_numeric($option['value']) && is_numeric($value) && $option['value'] == $value) ||
           $option['value'] === $value
         ) selected @endif
       >
