@@ -19,8 +19,8 @@
   @endif
 
   <div class="
-    @if ($labelCol >= 12) col-12 @else col-sm-{{ 12 - $labelCol }} @endif
-    @if(!$label && $labelCol < 12) offset-{{ $labelCol }} @endif
+    col-12 @if ($labelCol < 12) col-sm-{{ 12 - $labelCol }} @endif
+    @if(!$label && $labelCol < 12) offset-sm-{{ $labelCol }} @endif
   ">
     {!! $slot !!}
   </div>
