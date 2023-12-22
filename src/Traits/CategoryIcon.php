@@ -13,7 +13,7 @@ trait CategoryIcon
     ];
 
     protected function initCategoryIconDefault(
-        string $styleIcon = null,
+        ?string $styleIcon = null,
     ): void {
         $this->categoryIcon = $styleIcon;
 

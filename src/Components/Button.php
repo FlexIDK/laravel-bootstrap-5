@@ -16,9 +16,9 @@ class Button extends Component
     public function __construct(
         string $color = 'primary',
         public bool $outline = false,
-        string $type = null,
+        ?string $type = null,
         public ?string $href = null,
-        string $size = null,
+        ?string $size = null,
     ) {
         $this->initColorButton($color);
         $this->initTypeButtonDefault($type);

@@ -13,8 +13,8 @@ class Icon extends Component
     use Traits\Color;
 
     public function __construct(
-        string $color = null,
-        string $category = null,
+        ?string $color = null,
+        ?string $category = null,
     ) {
         $this->initColorDefault($color);
         $this->initCategoryIconDefault($category);

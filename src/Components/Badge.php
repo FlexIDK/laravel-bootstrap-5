@@ -12,7 +12,7 @@ class Badge extends Component
     use Traits\Color;
 
     public function __construct(
-        string $color = null,
+        ?string $color = null,
     ) {
         $this->initColorDefault($color);
     }

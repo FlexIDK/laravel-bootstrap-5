@@ -16,7 +16,7 @@ trait TypeButton
     ];
 
     protected function initTypeButtonDefault(
-        string $typeButton = null,
+        ?string $typeButton = null,
     ): void {
         $this->typeButton = $typeButton;
 

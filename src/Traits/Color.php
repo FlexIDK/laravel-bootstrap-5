@@ -21,7 +21,7 @@ trait Color
     ];
 
     protected function initColorDefault(
-        string $color = null,
+        ?string $color = null,
     ): void {
         $this->color = $color;
 
@@ -34,7 +34,7 @@ trait Color
     }
 
     protected function initColorButton(
-        string $color = null,
+        ?string $color = null,
     ): void {
         $this->color = $color;
 
