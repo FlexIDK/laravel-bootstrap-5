@@ -1,4 +1,5 @@
 @props([
+    'id' => null,
     'name' => null,
     'label' => null,
     'multiple' => false,
@@ -19,8 +20,8 @@
   </label>
 @endif
 
-
 <select
+  @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
   @if($name && !$disabled) name="{{ $name }}" @endif
   class="
     form-select
