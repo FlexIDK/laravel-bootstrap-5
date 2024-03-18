@@ -4,20 +4,20 @@
   "homepage": "https://github.com/FlexIDK/laravel-bootstrap-5",
   "description": "Laravel Bootstrap 5 Blade components",
   "license": "MIT",
-  "version": "v0.1.1",
+  "version": "v0.2.0",
   "authors": [
   ],
   "require": {
     "php" : "~8.1",
-    "illuminate/contracts": "~v10",
-    "illuminate/view": "~v10",
-    "illuminate/support": "~v10"
+    "illuminate/contracts": "~v10|~v11",
+    "illuminate/view": "~v10|~v11",
+    "illuminate/support": "~v10|~v11"
   },
   "require-dev": {
-    "symfony/var-dumper": "~v6"
+    "symfony/var-dumper": "~v6|~v7"
   },
   "suggest": {
-    "laravel/framework": "~v10",
+    "laravel/framework": "~v10|~v11",
     "twbs/bootstrap": "~v5.3"
   },
   "autoload": {
