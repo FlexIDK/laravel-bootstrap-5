@@ -31,6 +31,7 @@
   @if($autofocus) autofocus @endif
   @if($readonly) readonly @endif
   @if($disabled) disabled @endif
+  {{ $attributes }}
 >{{ $currentValue() }}</textarea>
 
 @if($feedback && $name)

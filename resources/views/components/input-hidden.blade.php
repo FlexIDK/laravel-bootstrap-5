@@ -2,6 +2,14 @@
     'name',
     'value',
 ])
-<input type="hidden"
-       name="{{ $name }}"
-       value="{{ $value }}">
+@php
+$attributes = $attributes
+    ->merge([
+        'type' => 'hidden',
+        'name' => $name,
+        'value' => $value
+    ]);
+@endphp
+<input
+  {{ $attributes }}
+>

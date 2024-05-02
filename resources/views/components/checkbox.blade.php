@@ -25,6 +25,7 @@
     @if($disabled) disabled @endif
     @if($readonly) readonly @endif
     {{ $currentChecked() ? 'checked' : '' }}
+    {{ $attributes }}
   />
 
   @if ($label)

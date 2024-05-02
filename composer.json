@@ -4,7 +4,7 @@
   "homepage": "https://github.com/FlexIDK/laravel-bootstrap-5",
   "description": "Laravel Bootstrap 5 Blade components",
   "license": "MIT",
-  "version": "v0.2.1",
+  "version": "v0.2.2",
   "authors": [
   ],
   "require": {

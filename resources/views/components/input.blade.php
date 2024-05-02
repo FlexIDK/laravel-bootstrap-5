@@ -44,6 +44,7 @@ if($plaintext) {
   @if($autofocus) autofocus @endif
   @if($readonly) readonly @endif
   @if($disabled) disabled @endif
+  {{ $attributes }}
 >
 
 @if($feedback && $name)

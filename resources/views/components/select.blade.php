@@ -32,6 +32,7 @@
   @if($disabled) disabled @endif
   @if($multiple) multiple @endif
   @if($lines > 1) size="3" @endif
+  {{ $attributes }}
 >
   <x-bootstrap::select-options
     :default="$default"

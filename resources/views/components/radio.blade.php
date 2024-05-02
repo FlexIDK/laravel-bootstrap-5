@@ -20,6 +20,7 @@
     @if($disabled) disabled @endif
     {{ old($name) === $value ? 'checked' : '' }}
     @if($labelDisabled) aria-label="{{ $label }}" @endif
+    {{ $attributes }}
   />
 
   @if (!$labelDisabled)
