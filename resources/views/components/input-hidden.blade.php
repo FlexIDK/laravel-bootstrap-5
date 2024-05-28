@@ -1,14 +1,16 @@
 @props([
-    'name',
-    'value',
+  'name',
+  'value',
 ])
 @php
 $attributes = $attributes
-    ->merge([
-        'type' => 'hidden',
-        'name' => $name,
-        'value' => $value
-    ]);
+  ->class([
+  ])
+  ->merge([
+      'type' => 'hidden',
+      'name' => $name,
+      'value' => $value
+  ]);
 @endphp
 <input
   {{ $attributes }}

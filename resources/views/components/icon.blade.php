@@ -1,16 +1,15 @@
 @props([
-    'name',
+  'name',
 ])
-
 @php
 $attributes = $attributes
-    ->class([
-        $categoryIcon(),
-        ('fa-' . $name),
-        $colorText(),
-    ])
-    ->merge([
-    ]);
+  ->class([
+    $categoryIcon(),
+    ('fa-' . $name),
+    $colorText(),
+  ])
+  ->merge([
+  ]);
 @endphp
 
 @if($name)

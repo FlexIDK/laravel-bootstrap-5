@@ -1,15 +1,15 @@
 @props([
-    'id' => null,
-    'name' => null,
-    'label' => null,
-    'value' => null,
-    'required' => false,
-    'size' => null,
-    'autofocus' => false,
-    'placeholder' => null,
-    'readonly' => false,
-    'disabled' => false,
-    'feedback' => true,
+  'id' => null,
+  'name' => null,
+  'label' => null,
+  'value' => null,
+  'required' => false,
+  'size' => null,
+  'autofocus' => false,
+  'placeholder' => null,
+  'readonly' => false,
+  'disabled' => false,
+  'feedback' => true,
 ])
 @if($label)
 <label for="label-{{ $name }}"

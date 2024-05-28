@@ -1,9 +1,17 @@
 @props([
-    'active' => true,
-    'message',
+  'active' => true,
+  'message',
 ])
+@php
+$attributes = $attributes
+  ->class([
+    'valid-feedback',
+  ])
+  ->merge([
+  ]);
+@endphp
 @if ($active)
-<div class="valid-feedback">
+<div {{ $attributes }}>
   {{ $message }}
 </div>
 @endif

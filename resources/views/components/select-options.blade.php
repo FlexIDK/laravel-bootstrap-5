@@ -1,7 +1,7 @@
 @props([
-    'value' => null,
-    'options' => [],
-    'default' => null,
+  'value' => null,
+  'options' => [],
+  'default' => null,
 ])
 @if($default)
   <option

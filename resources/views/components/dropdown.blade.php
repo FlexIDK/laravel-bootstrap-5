@@ -1,8 +1,8 @@
 @props([
-    'position' => null,
-    'after' => null,
+  'position' => null,
+  'after' => null,
 ])
-<?php
+@php
 use \Illuminate\View\ComponentSlot;
 
 $hasSlot = !! (
@@ -18,8 +18,9 @@ $attributes = $attributes
     ($position === 'start' ? 'dropdown-menu-start' : null),
     ($position === 'end' ? 'dropdown-menu-end' : null),
   ])->merge([
+    //
   ]);
-?>
+@endphp
 <{{ $tagParent }} {{ $attributes }}>
 
 @if($slot instanceof ComponentSlot && !$slot->isEmpty()){{ $slot }}@endif

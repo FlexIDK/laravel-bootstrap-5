@@ -1,13 +1,15 @@
 @props([
-    'dismiss',
+  'dismiss',
 ])
 
 @php
-  $attributes = $attributes->class([
-      'btn-close',
-  ])->merge([
-      'type' => 'button',
-      'data-bs-dismiss' => $dismiss,
+$attributes = $attributes
+  ->class([
+    'btn-close',
+  ])
+  ->merge([
+    'type' => 'button',
+    'data-bs-dismiss' => $dismiss,
   ]);
 @endphp
 

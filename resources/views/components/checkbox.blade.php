@@ -1,17 +1,27 @@
 @props([
-    'label' => null,
-    'id' => null,
-    'name' => null,
-    'value' => "1",
-    'required' => false,
-    'disabled' => false,
-    'readonly' => false,
-    'inline' => false,
-    'labelDisabled' => false,
-    'feedback' => true,
-    'checked' => false,
+  'label' => null,
+  'id' => null,
+  'name' => null,
+  'value' => "1",
+  'required' => false,
+  'disabled' => false,
+  'readonly' => false,
+  'inline' => false,
+  'labelDisabled' => false,
+  'feedback' => true,
+  'checked' => false,
 ])
-<div class="form-check @if($inline) form-check-inline @endif ">
+@php
+$attributes = $attributes
+  ->class([
+    'form-check',
+    ($inline ? 'form-check-inline' : null),
+  ])
+  ->merge([
+    //
+  ]);
+@endphp
+<div {{ $attributes}} >
   <input
     @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
     class="

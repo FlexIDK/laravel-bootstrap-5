@@ -1,13 +1,16 @@
 @props([
-    'name' => null,
-    'label' => null,
-    'labelCol' => 3,
+  'name' => null,
+  'label' => null,
+  'labelCol' => 3,
 ])
 @php
-  $attributes = $attributes
-    ->class([
-        'row',
-    ])
+$attributes = $attributes
+  ->class([
+      'row',
+  ])
+  ->merge([
+    //
+  ]);
 @endphp
 <div {{ $attributes }}>
   @if($label)

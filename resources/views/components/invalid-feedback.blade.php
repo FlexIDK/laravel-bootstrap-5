@@ -1,6 +1,6 @@
 @props([
-    'active' => true,
-    'message',
+  'active' => true,
+  'message',
 ])
 @php
 $attributes = $attributes

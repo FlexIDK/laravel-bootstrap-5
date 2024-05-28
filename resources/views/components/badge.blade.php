@@ -7,21 +7,20 @@
 
 @php
 $attributes = $attributes
-    ->class([
-        'badge',
-        $colorBadge(),
-        $rounded && !$dot ? 'rounded-pill' : null,
+  ->class([
+    'badge',
+    $colorBadge(),
+    $rounded && !$dot ? 'rounded-pill' : null,
 
-        ...($dot ? [
-            'border',
-            'rounded-circle',
-            'p-' . ($dotSize ?: 1),
-        ] : [])
-    ])
-    ->merge([
-        //
-    ])
-;
+    ...($dot ? [
+        'border',
+        'rounded-circle',
+        'p-' . ($dotSize ?: 1),
+    ] : [])
+  ])
+  ->merge([
+    //
+  ]);
 
 $isVisible = false;
 if (

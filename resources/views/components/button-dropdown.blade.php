@@ -7,18 +7,27 @@
   'dropdownPosition' => null,
 ])
 @php
-$classPosition = match ($dropdownPosition) {
-  'start' => 'dropstart',
-  'end' => 'dropend',
-  'up' => 'dropup',
-  'up-center' => 'dropup-center',
-  'down-center' => 'dropdown-center',
-//  'down' => 'dropdown',
-  default => 'dropdown',
-};
+  $classPosition = match ($dropdownPosition) {
+    'start' => 'dropstart',
+    'end' => 'dropend',
+    'up' => 'dropup',
+    'up-center' => 'dropup-center',
+    'down-center' => 'dropdown-center',
+  //  'down' => 'dropdown',
+    default => 'dropdown',
+  };
+
+  $attributes = $attributes
+    ->class([
+      'btn-group',
+      $classPosition,
+    ])
+    ->merge([
+      //
+    ]);
 @endphp
 
-<div class="btn-group {{ $classPosition  }}">
+<div {{ $attributes }}>
   <x-bootstrap::button
     type="button"
     :dropdown="true"

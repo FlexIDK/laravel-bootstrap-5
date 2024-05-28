@@ -1,11 +1,19 @@
 @props([
-    'color' => 'success',
-    'dismiss' => false,
-    'items' => [],
-    'activeLatest' => false,
+  'color' => 'success',
+  'dismiss' => false,
+  'items' => [],
+  'activeLatest' => false,
 ])
+@php
+$attributes = $attributes
+  ->class([
+  ])
+  ->merge([
+    'aria-label' => 'breadcrumb',
+  ]);
+@endphp
 @if (count($items))
-<nav aria-label="breadcrumb">
+<nav {{ $attributes }}>
   <ol class="breadcrumb">
   @foreach($items as $item)
     @if(is_string($item))

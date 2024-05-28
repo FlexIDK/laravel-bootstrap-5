@@ -1,22 +1,20 @@
 @props([
-    /** @var array{title: string, content: string, active: boolean} $@items  */
-    'items' => [],
-    'flush' => false,
-    'alwaysOpen' => false
+  /** @var array{title: string, content: string, active: boolean} $@items  */
+  'items' => [],
+  'flush' => false,
+  'alwaysOpen' => false
 ])
 @php
 $attributes = $attributes
   ->class([
-      'accordion',
-      ($flush ? 'accordion-flush' : null),
+    'accordion',
+    ($flush ? 'accordion-flush' : null),
   ])
   ->merge([
-      'id' => $id,
+    'id' => $id,
   ]);
 @endphp
-<div
-  {{ $attributes }}
-  id="{{ $id }}">
+<div {{ $attributes }}>
 
   @foreach($items as $key => $item)
     <div class="accordion-item">

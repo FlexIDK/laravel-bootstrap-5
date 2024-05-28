@@ -1,16 +1,16 @@
 @props([
-    'id' => null,
-    'name' => null,
-    'label' => null,
-    'multiple' => false,
-    'size' => null,
-    'value' => null,
-    'options' => [],
-    'default' => null,
-    'disabled' => false,
-    'readonly' => false,
-    'lines' => 1,
-    'feedback' => true,
+  'id' => null,
+  'name' => null,
+  'label' => null,
+  'multiple' => false,
+  'size' => null,
+  'value' => null,
+  'options' => [],
+  'default' => null,
+  'disabled' => false,
+  'readonly' => false,
+  'lines' => 1,
+  'feedback' => true,
 ])
 @if($label)
   <label

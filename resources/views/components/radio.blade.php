@@ -1,14 +1,24 @@
 @props([
-    'name',
-    'label',
-    'value' => null,
-    'checked' => false,
-    'required' => false,
-    'disabled' => false,
-    'inline' => false,
-    'labelDisabled' => false,
+  'name',
+  'label',
+  'value' => null,
+  'checked' => false,
+  'required' => false,
+  'disabled' => false,
+  'inline' => false,
+  'labelDisabled' => false,
 ])
-<div class="form-check @if($inline) form-check-inline @endif ">
+@php
+$attributes = $attributes
+  ->class([
+    'form-check',
+    ($inline ? 'form-check-inline' : null),
+  ])
+  ->merge([
+    //
+  ]);
+@endphp
+<div {{ $attributes }}>
   <input
     class="form-check-input"
     type="radio"

@@ -1,18 +1,17 @@
 @props([
-    'color' => null,
-    'dismissible' => false,
-    'class' => "",
+  'color' => null,
+  'dismissible' => false,
 ])
 @php
-  $attributes = $attributes
-    ->class([
-        'alert',
-        $colorAlert(),
-        ($dismissible ? 'alert-dismissible fade show' : null),
-    ])
-    ->merge([
-        'role' => 'alert',
-    ]);
+$attributes = $attributes
+  ->class([
+    'alert',
+    $colorAlert(),
+    ($dismissible ? 'alert-dismissible fade show' : null),
+  ])
+  ->merge([
+    'role' => 'alert',
+  ]);
 @endphp
 <div {{ $attributes }}>
   <div>

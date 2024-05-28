@@ -9,30 +9,30 @@
 @php
 $attributes = $attributes
   ->class([
-      'btn',
-      $colorButton(),
-      $sizeButton(),
-      $dropdown ? 'dropdown-toggle' : null,
-      $disabled ? 'disabled' : null,
-      ($toggle && $active
-        ? 'active'
-        : null),
-      ($nowrap ? 'text-nowrap' : null),
+    'btn',
+    $colorButton(),
+    $sizeButton(),
+    $dropdown ? 'dropdown-toggle' : null,
+    $disabled ? 'disabled' : null,
+    ($toggle && $active
+      ? 'active'
+      : null),
+    ($nowrap ? 'text-nowrap' : null),
   ])
   ->merge([
-      ...($toggle ? [
-        'data-bs-toggle' => 'button',
-      ] : []),
-      ...(! $typeButton() ? [
-        'href' => $href,
-        'role' => 'button',
-      ] : [
-        'type' => $typeButton()
-      ]),
-      ...($disabled
-        ? (! $typeButton() ? ['tabindex' => '-1'] : ['disabled' => true])
-        : []),
-      ...($dropdown ? ['data-bs-toggle' => 'dropdown'] : []),
+    ...($toggle ? [
+      'data-bs-toggle' => 'button',
+    ] : []),
+    ...(! $typeButton() ? [
+      'href' => $href,
+      'role' => 'button',
+    ] : [
+      'type' => $typeButton()
+    ]),
+    ...($disabled
+      ? (! $typeButton() ? ['tabindex' => '-1'] : ['disabled' => true])
+      : []),
+    ...($dropdown ? ['data-bs-toggle' => 'dropdown'] : []),
   ]);
 @endphp
 
