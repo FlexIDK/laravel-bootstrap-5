@@ -3,6 +3,7 @@
 namespace One23\LaravelBootstrap5\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class LaravelBootstrap5Provider extends ServiceProvider
 {
@@ -14,7 +15,7 @@ class LaravelBootstrap5Provider extends ServiceProvider
                 continue;
             }
 
-            $key = 'bootstrap::' . \Str::kebab(substr($file, 0, -4));
+            $key = 'bootstrap::' . Str::kebab(substr($file, 0, -4));
             $value = 'One23\\LaravelBootstrap5\\Components\\' . substr($file, 0, -4);
 
             $components[$key] = $value;

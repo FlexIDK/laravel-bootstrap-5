@@ -4,20 +4,22 @@
   "homepage": "https://github.com/FlexIDK/laravel-bootstrap-5",
   "description": "Laravel Bootstrap 5 Blade components",
   "license": "MIT",
-  "version": "v0.2.3",
+  "version": "v0.3.0",
   "authors": [
   ],
   "require": {
-    "php" : "^8.1|^8.2|^8.3",
-    "illuminate/contracts": "^v10|^v11",
-    "illuminate/view": "^v10|^v11",
-    "illuminate/support": "^v10|^v11"
+    "php" : "^8.1|^8.2|^8.3|^8.4",
+    "illuminate/contracts": "^v10|^v11|^v12",
+    "illuminate/view": "^v10|^v11|^v12",
+    "illuminate/support": "^v10|^v11|^v12"
   },
   "require-dev": {
-    "symfony/var-dumper": "^v6|^v7"
+    "symfony/var-dumper": "^v6|^v7",
+    "laravel/pint": "^v1",
+    "phpstan/phpstan": "^1|^2"
   },
   "suggest": {
-    "laravel/framework": "^v10|^v11",
+    "laravel/framework": "^v10|^v11|^v12",
     "twbs/bootstrap": "~v5.3"
   },
   "autoload": {
@@ -31,5 +33,13 @@
         "One23\\LaravelBootstrap5\\Providers\\LaravelBootstrap5Provider"
       ]
     }
+  },
+  "scripts": {
+    "pint": "@php ./vendor/laravel/pint/builds/pint",
+    "phpstan": "@php ./vendor/bin/phpstan analyse --memory-limit=2G",
+    "code-quality": [
+      "@pint",
+      "@phpstan"
+    ]
   }
 }

@@ -21,9 +21,10 @@ use \Illuminate\View\ComponentSlot;
 
 @if($label)
 <label
-  @if($name) for="label-{{ $name }}" @endif
-  class="form-label">
-  {{ $label }}
+  @if($id) for="{{ $id }}" @endif
+  class="form-label"
+>
+  {{ $label }}@if($required)<sup class="text-muted">*</sup>@endif
 </label>
 @endif
 

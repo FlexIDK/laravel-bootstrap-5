@@ -1,0 +1,47 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "combine_consecutive_issets": true,
+        "concat_space": {
+            "spacing": "one"
+        },
+        "declare_parentheses": false,
+        "explicit_string_variable": true,
+        "align_multiline_comment": {
+            "comment_type": "phpdocs_like"
+        },
+        "cast_spaces": {
+            "space": "none"
+        },
+        "declare_equal_normalize": {
+            "space": "none"
+        },
+        "braces": {
+            "allow_single_line_closure": true,
+            "position_after_functions_and_oop_constructs": "same"
+        },
+        "types_spaces": {
+            "space": "none"
+        },
+        "single_line_empty_body": true,
+        "random_api_migration": true,
+        "function_declaration": {
+            "closure_function_spacing": "none",
+            "closure_fn_spacing": "none"
+        },
+        "logical_operators": true,
+        "no_spaces_around_offset": false,
+        "phpdoc_annotation_without_dot": true,
+        "phpdoc_line_span": {
+            "const": "single",
+            "method": "multi",
+            "property": "single"
+        },
+        "string_line_ending": true,
+        "comment_to_phpdoc": true,
+        "single_line_comment_style": true,
+        "phpdoc_trim_consecutive_blank_line_separation": true,
+        "phpdoc_var_annotation_correct_order": true,
+        "not_operator_with_space": false
+    }
+}

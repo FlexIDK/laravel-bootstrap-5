@@ -1,0 +1,15 @@
+parameters:
+    paths:
+        - src
+    # Level 9 is the highest level
+    level: 1
+    ignoreErrors:
+        - '#Function old not found\.#'
+        - '#Function view not found\.#'
+        - '#Function session not found\.#'
+#        - '#Unsafe usage of new static\(\)\.#'
+#        - '#Call to an undefined static method [a-zA-Z0-9\\_]+::withTrashed\(\)#'
+#    checkMissingIterableValueType: false
+
+
+

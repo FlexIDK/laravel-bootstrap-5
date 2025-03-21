@@ -81,7 +81,8 @@ $items = array_filter($items);
               @if(\Arr::get($item, 'active', false)) active @else {{ $classIfActive }} @endif
               @if(\Arr::get($item, 'disabled', false)) disabled @endif
             "
-            href="{{ \Arr::get($item, 'url') }}"
+            @if(\Arr::get($item, 'target')) target="{{ \Arr::get($item, 'target') }}" @endif
+            href="{{ \Arr::get($item, 'url', \Arr::get($item, 'href', '#')) }}"
           >
             @if($item['html'] ?? null) {!! $item['html'] !!} @else {{ $item['text'] }} @endif
           </a>

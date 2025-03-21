@@ -6,20 +6,23 @@
   'required' => false,
   'size' => null,
   'autofocus' => false,
-  'placeholder' => null,
   'readonly' => false,
   'disabled' => false,
+  //
+  'placeholder' => null,
   'feedback' => true,
 ])
 @if($label)
-<label for="label-{{ $name }}"
-       class="form-label">
-  {{ $label }}
+<label
+  @if($id) for="{{ $id }}" @endif
+  class="form-label"
+>
+  {{ $label }}@if($required)<sup class="text-muted">*</sup>@endif
 </label>
 @endif
 
 <textarea
-  @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
+  @if($id) id="{{ $id }}" @endif
   class="
     form-control
     @if($name) @error($name) is-invalid @enderror @endif

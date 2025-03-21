@@ -1,10 +1,14 @@
 @props([
+  'id' => null,
   'name',
   'label',
   'value' => null,
-  'checked' => false,
   'required' => false,
+  'autofocus' => false,
+  'readonly' => false,
   'disabled' => false,
+  //
+  'checked' => false,
   'inline' => false,
   'labelDisabled' => false,
 ])
@@ -25,8 +29,10 @@ $attributes = $attributes
     @if($name && $disabled) name="__disabled__{{ $name }}"
     @elseif($name) name="{{ $name }}" @endif
     value="{{ $value }}"
-    id="label-{{ $name }}-{{ $value }}"
+    @if($id) id="{{ $id }}--{{ md5((string) $value) }}" @endif
     @if($required) required @endif
+    @if($autofocus) autofocus @endif
+    @if($readonly) readonly @endif
     @if($disabled) disabled @endif
     {{ old($name) === $value ? 'checked' : '' }}
     @if($labelDisabled) aria-label="{{ $label }}" @endif
@@ -34,8 +40,10 @@ $attributes = $attributes
   />
 
   @if (!$labelDisabled)
-  <label class="form-check-label"
-         for="label-{{ $name }}-{{ $value }}">
+  <label
+    class="form-check-label"
+    @if($id) for="{{ $id }}--{{ md5((string) $value) }}" @endif
+  >
     {{ $label }}
   </label>
   @endif

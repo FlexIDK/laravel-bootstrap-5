@@ -15,7 +15,11 @@ trait ValueRadio
             return $this->checked;
         }
 
-        if (is_null(old($this->name))) {
+        if (! session()->has('_old_input')) {
+            return $this->checked;
+        }
+
+        if ($this->value === null) {
             return $this->checked;
         }
 

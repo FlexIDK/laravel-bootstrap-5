@@ -3,14 +3,16 @@
   'name' => null,
   'label' => null,
   'value' => null,
-  'type' => 'text',
   'required' => false,
-  'size' => null,
-  'autocomplete' => null,
   'autofocus' => false,
-  'placeholder' => null,
   'readonly' => false,
   'disabled' => false,
+  //
+  'size' => null,
+  //
+  'type' => 'text',
+  'autocomplete' => null,
+  'placeholder' => null,
   'plaintext' => false,
   'feedback' => true,
 ])
@@ -21,14 +23,15 @@ if($plaintext) {
 @endphp
 @if($label)
 <label
-  @if($name) for="label-{{ $name }}" @endif
-  class="form-label">
+  @if($id) for="{{ $id }}" @endif
+  class="form-label"
+>
   {{ $label }}
 </label>
 @endif
 
 <input
-  @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
+  @if($id) id="{{ $id }}" @endif
   type="{{ $type }}"
   class="
     @if($plaintext) form-control-plaintext @else form-control @endif

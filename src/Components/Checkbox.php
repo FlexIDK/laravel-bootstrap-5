@@ -9,6 +9,7 @@ use One23\LaravelBootstrap5\Traits;
 
 class Checkbox extends Component
 {
+    use Traits\UniqId;
     use Traits\ValueCheckbox;
 
     public function __construct(
@@ -21,6 +22,7 @@ class Checkbox extends Component
         return view(
             'bootstrap::components.checkbox',
             [
+                'id' => $this->uniqId(),
             ]
         );
     }

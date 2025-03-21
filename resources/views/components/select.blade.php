@@ -2,36 +2,42 @@
   'id' => null,
   'name' => null,
   'label' => null,
-  'multiple' => false,
-  'size' => null,
   'value' => null,
+  'required' => false,
+  'size' => null,
+  'autofocus' => false,
+  'readonly' => false,
+  'disabled' => false,
+  //
+  'multiple' => false,
   'options' => [],
   'default' => null,
-  'disabled' => false,
-  'readonly' => false,
   'lines' => 1,
   'feedback' => true,
 ])
 @if($label)
   <label
-    @if ($name) for="label-{{ $name }}" @endif
-    class="form-label">
-    {{ $label }}
+    @if ($id) for="{{ $id }}" @endif
+    class="form-label"
+  >
+    {{ $label }}@if($required)<sup class="text-muted">*</sup>@endif
   </label>
 @endif
 
 <select
-  @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
+  @if($id) id="{{ $id }}" @endif
   @if($name && !$disabled) name="{{ $name }}" @endif
   class="
     form-select
     @if($size) form-size-{{ $size }} @endif
     @if($name) @error($name) is-invalid @enderror @endif
   "
+  @if($autofocus) autofocus @endif
   @if($readonly) readonly @endif
   @if($disabled) disabled @endif
   @if($multiple) multiple @endif
-  @if($lines > 1) size="3" @endif
+  @if($required) required @endif
+  @if($lines > 1) size="{{ $lines }}" @endif
   {{ $attributes }}
 >
   <x-bootstrap::select-options

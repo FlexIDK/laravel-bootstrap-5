@@ -1,7 +1,8 @@
 @props([
-  'name' => null,
+  'id' => null,
   'label' => null,
   'labelCol' => 3,
+  'required' => false,
 ])
 @php
 $attributes = $attributes
@@ -15,15 +16,19 @@ $attributes = $attributes
 <div {{ $attributes }}>
   @if($label)
     <label
-      @if($name) for="label-{{ $name }}" @endif
-      class="col-form-label col-12 col-sm-{{ $labelCol }}">
-      {{ $label }}
+      @if($id) for="{{ $id }}" @endif
+      class="
+        col-form-label col-12
+        @if($labelCol) col-sm-{{ $labelCol }} @endif
+      "
+    >
+      {{ $label }}@if($required)<sup class="text-muted">*</sup>@endif
     </label>
   @endif
 
   <div class="
-    col-12 @if ($labelCol < 12) col-sm-{{ 12 - $labelCol }} @endif
-    @if(!$label && $labelCol < 12) offset-sm-{{ $labelCol }} @endif
+    col-12 @if ($labelCol) col-sm-{{ 12 - $labelCol }} @endif
+    @if(! $label && $labelCol) offset-sm-{{ $labelCol }} @endif
   ">
     {!! $slot !!}
   </div>

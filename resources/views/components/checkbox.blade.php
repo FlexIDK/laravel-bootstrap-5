@@ -23,7 +23,7 @@ $attributes = $attributes
 @endphp
 <div {{ $attributes}} >
   <input
-    @if($id) id="{{ $id }}" @elseif($name) id="label-{{ $name }}" @endif
+    @if($id) id="{{ $id }}" @endif
     class="
       form-check-input
       @if($name) @error($name) is-invalid @enderror @endif
@@ -41,9 +41,9 @@ $attributes = $attributes
   @if ($label)
   <label
     class="form-check-label"
-    @if($name) for="label-{{ $name }}" @endif
+    @if($id) for="{{ $id }}" @endif
   >
-    {{ $label }}
+    {{ $label }}@if($required)<sup class="text-muted">*</sup>@endif
   </label>
   @endif
 

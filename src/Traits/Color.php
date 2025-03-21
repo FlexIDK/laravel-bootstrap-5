@@ -4,6 +4,7 @@ namespace One23\LaravelBootstrap5\Traits;
 
 /**
  * @property bool $outline
+ * @property string|null $color
  */
 trait Color
 {
@@ -62,7 +63,7 @@ trait Color
             return 'btn-' . $this->color;
         }
 
-        return $this->outline
+        return ($this->outline ?? null)
             ? 'btn-outline-' . $this->color
             : 'btn-' . $this->color;
     }

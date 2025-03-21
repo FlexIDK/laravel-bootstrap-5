@@ -9,6 +9,7 @@ use One23\LaravelBootstrap5\Traits;
 
 class InputGroup extends Component
 {
+    use Traits\UniqId;
     use Traits\Value;
 
     public function __construct(
@@ -19,6 +20,7 @@ class InputGroup extends Component
         return view(
             'bootstrap::components.input-group',
             [
+                'id' => $this->uniqId(),
             ]
         );
     }

@@ -5,7 +5,8 @@
 ])
 @if($default)
   <option
-    @if(is_null($value)) selected @endif
+    value=""
+    @if (\One23\LaravelBootstrap5\Components\SelectOptions::isSelected(null, $value)) selected @endif
   >
     {{ $default }}
   </option>
@@ -22,21 +23,14 @@
     )
       <option
         value="{{ $option['value'] }}"
-        @if(
-          (is_array($value) && in_array($option['value'], $value)) ||
-          (is_numeric($option['value']) && is_numeric($value) && $option['value'] == $value) ||
-          $option['value'] === $value
-        ) selected @endif
+        @if (\One23\LaravelBootstrap5\Components\SelectOptions::isSelected($option['value'], $value)) selected @endif
       >
         {{ $option['label'] }}</option>
     @endif
   @else
     <option
       value="{{ $key }}"
-      @if(
-        (is_array($value) && in_array($key, $value)) ||
-        $key === $value
-      ) selected @endif
+      @if (\One23\LaravelBootstrap5\Components\SelectOptions::isSelected($key, $value)) selected @endif
     >
       {{ $option }}</option>
   @endif
